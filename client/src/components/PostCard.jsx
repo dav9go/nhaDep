@@ -42,7 +42,7 @@ export default function PostCard({
       setLiked(true);
       try {
         async function LikeFn() {
-          await fetch(`http://localhost:8080/api/v1/post/like`, {
+          await fetch(`https://nhadep.onrender.com/api/v1/post/like`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export default function PostCard({
         setLiked(false);
         try {
           async function unLikeFn() {
-            await fetch(`http://localhost:8080/api/v1/post/unlike`, {
+            await fetch(`https://nhadep.onrender.com/api/v1/post/unlike`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",

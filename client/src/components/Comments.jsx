@@ -46,7 +46,7 @@ export default function Comments({ currentUserId }) {
     async function createComment() {
       try {
         await fetch(
-          `http://localhost:8080/api/v1/comment${location.pathname}`,
+          `https://nhadep.onrender.com/api/v1/comment${location.pathname}`,
           {
             method: "POST",
             headers: {
@@ -78,7 +78,7 @@ export default function Comments({ currentUserId }) {
       const fetchDeleteComment = async () => {
         try {
           await fetch(
-            `http://localhost:8080/api/v1/comment/delete${location.pathname}`,
+            `https://nhadep.onrender.com/api/v1/comment/delete${location.pathname}`,
             {
               method: "PUT",
               headers: {
@@ -111,7 +111,7 @@ export default function Comments({ currentUserId }) {
 
     const fetchUpdateComment = async () => {
       try {
-        await fetch("http://localhost:8080/api/v1/comment/edit-comment", {
+        await fetch("https://nhadep.onrender.com/api/v1/comment/edit-comment", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -144,7 +144,7 @@ export default function Comments({ currentUserId }) {
 
       try {
         const response = await fetch(
-          `http://localhost:8080/api/v1/comment${location.pathname}`,
+          `https://nhadep.onrender.com/api/v1/comment${location.pathname}`,
           {
             method: "GET",
             headers: {

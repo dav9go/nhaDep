@@ -27,7 +27,7 @@ function LandingPage() {
 
   async function logUser(userObject) {
     console.log(userObject);
-    await fetch("http://localhost:8080/api/v1/user", {
+    await fetch("https://nhadep.onrender.com/api/v1/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

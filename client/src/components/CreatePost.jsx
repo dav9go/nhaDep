@@ -99,13 +99,16 @@ export default function CreatePost() {
               console.log("form after setForm", form);
               console.log("setForm finished");
             });
-          await fetch(`http://localhost:8080/api/v1/post${location.pathname}`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(form),
-          }).then(() => {
+          await fetch(
+            `https://nhadep.onrender.com/api/v1/post${location.pathname}`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(form),
+            }
+          ).then(() => {
             setGeneratingImg(false);
             setUploaded(true);
             navigate("/home");

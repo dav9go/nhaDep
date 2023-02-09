@@ -34,7 +34,7 @@ export default function Profile() {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/post${location.pathname}`,
+        `https://nhadep.onrender.com/api/v1/post${location.pathname}`,
         {
           method: "GET",
           headers: {

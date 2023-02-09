@@ -55,7 +55,7 @@ export default function Card({
       setLiked(true);
       try {
         async function LikeFn() {
-          await fetch(`http://localhost:8080/api/v1/post/like`, {
+          await fetch(`https://nhadep.onrender.com/api/v1/post/like`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export default function Card({
         setLiked(false);
         try {
           async function unLikeFn() {
-            await fetch(`http://localhost:8080/api/v1/post/unlike`, {
+            await fetch(`https://nhadep.onrender.com/api/v1/post/unlike`, {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
@@ -101,7 +101,7 @@ export default function Card({
         setDeletePostObject({ ...deletePostObject });
         console.log("delete post object", deletePostObject);
         const deletePost = await fetch(
-          "http://localhost:8080/api/v1/post/delete",
+          "https://nhadep.onrender.com/api/v1/post/delete",
           {
             method: "PUT",
             headers: {
