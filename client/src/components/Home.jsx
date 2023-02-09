@@ -61,7 +61,7 @@ export default function Home() {
       setTopFiveLikedPostsLastMonth(fiveMostLiked);
     }
     fivePostOfTheMonth();
-  }, [allPosts]);
+  }, [allPosts, postsOfLastMonth]);
 
   useEffect(() => {
     const fetchPosts = async () => {
