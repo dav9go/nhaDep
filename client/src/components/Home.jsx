@@ -40,26 +40,32 @@ export default function Home() {
   };
 
   useEffect(() => {
-    /** Set the posts of the last month only **/
-    const today = new Date().getTime();
-    console.log("TODAY", today);
-    console.log("allposts", allPosts);
-    const lastMonthPosts = allPosts.filter(
-      (post) => today - new Date(post.createdAt).getTime() < 2629800000
-    );
-    console.log("lastMonthPosts", lastMonthPosts);
+    function fivePostOfTheMonth() {
+      /** Set the posts of the last month only **/
+      const today = new Date().getTime();
+      console.log("TODAY", today);
+      console.log("allposts", allPosts);
+      const lastMonthPosts = allPosts.filter(
+        (post) => today - new Date(post.createdAt).getTime() < 2629800000
+      );
+      console.log("lastMonthPosts", lastMonthPosts);
 
-    setPostsOfLastMonth(lastMonthPosts);
+      setPostsOfLastMonth(lastMonthPosts);
+    }
+    fivePostOfTheMonth();
   }, [allPosts]);
 
   useEffect(() => {
-    const fiveMostLiked = postsOfLastMonth
-      .sort((a, b) => a.likes.length - b.likes.length)
-      .reverse()
-      .slice(0, 5);
+    function fivePostLkOfTheMonth() {
+      const fiveMostLiked = postsOfLastMonth
+        .sort((a, b) => a.likes.length - b.likes.length)
+        .reverse()
+        .slice(0, 5);
 
-    console.log("fiveMostLiked", fiveMostLiked);
-    setTopFiveLikedPostsLastMonth(fiveMostLiked);
+      console.log("fiveMostLiked", fiveMostLiked);
+      setTopFiveLikedPostsLastMonth(fiveMostLiked);
+    }
+    fivePostLkOfTheMonth();
   }, [postsOfLastMonth]);
 
   useEffect(() => {
