@@ -14,6 +14,11 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
 
+  const [postsOfLastMonth, setPostsOfLastMonth] = useState([]);
+  const [topFiveLikedPostsLastMonth, setTopFiveLikedPostsLastMonth] = useState(
+    []
+  );
+
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
@@ -35,6 +40,30 @@ export default function Home() {
   };
 
   useEffect(() => {
+    function fivePostOfTheMonth() {
+      /** Set the posts of the last month only **/
+      const today = new Date().getTime();
+      console.log("TODAY", today);
+      console.log("allposts", allPosts);
+      const lastMonthPosts = allPosts.filter(
+        (post) => today - new Date(post.createdAt).getTime() < 2629800000
+      );
+      console.log("lastMonthPosts", lastMonthPosts);
+
+      setPostsOfLastMonth(lastMonthPosts);
+
+      const fiveMostLiked = postsOfLastMonth
+        .sort((a, b) => a.likes.length - b.likes.length)
+        .reverse()
+        .slice(0, 5);
+
+      console.log("fiveMostLiked", fiveMostLiked);
+      setTopFiveLikedPostsLastMonth(fiveMostLiked);
+    }
+    fivePostOfTheMonth();
+  }, [allPosts]);
+
+  useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
 
@@ -49,7 +78,6 @@ export default function Home() {
         if (response.ok) {
           const result = await response.json();
           setAllPosts(result.data.reverse());
-          console.log(allPosts);
         }
       } catch (error) {
         console.log(error);
@@ -86,7 +114,7 @@ export default function Home() {
       <div className="flex-1">
         <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
           <div>
-            <h1 className="font-bold text-[32px]">The Community Showcase</h1>
+            <h1 className="font-bold text-4xl">The Community Showcase</h1>
             <p className="font-montserrat mt-2 text-md max-w-7xl">
               Discover the latest interior design trends and transform your home
               into a beautiful oasis with the help of our online interior house
@@ -101,26 +129,31 @@ export default function Home() {
             </p>
           </div>
         </section>
+        <div className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
+          <h2 className="text-3xl text-center">
+            Top 5 posts of the last 30 days
+          </h2>
+        </div>
         <section className="w-full flex h-[430px] mt-10">
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
-            src={prueba1}
+            src={topFiveLikedPostsLastMonth[3]?.photo}
           />
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
-            src={prueba2}
+            src={topFiveLikedPostsLastMonth[1]?.photo}
           />
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
-            src={prueba3}
+            src={topFiveLikedPostsLastMonth[0]?.photo}
           />
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
-            src={prueba4}
+            src={topFiveLikedPostsLastMonth[2]?.photo}
           />
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
-            src={prueba5}
+            src={topFiveLikedPostsLastMonth[4]?.photo}
           />
         </section>
         <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
