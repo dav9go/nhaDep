@@ -180,7 +180,7 @@ export default function Comments({ currentUserId }) {
 
   return (
     <div className="w-full">
-      <h3 className="text-3xl">Comments</h3>
+      <h3 className="text-3xl text-center lg:text-start">Comments</h3>
 
       {/** Comment Form  **/}
 

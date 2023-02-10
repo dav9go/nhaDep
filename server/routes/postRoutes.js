@@ -167,6 +167,11 @@ router.route("/unlike").put((req, res) => {
 router.route("/delete").put(async (req, res) => {
   console.log("DELETE POST req.body", req.body);
   try {
+    /** DELETE IMAGE ON CLOUDINARY **/
+    const deletePhoto = await cloudinary.uploader
+      .destroy(req.body.photoId)
+      .then((res) => console.log(res));
+
     /** DELETE ALL THE COMMENTS OF THE POST **/
     const commentDeleted = await Comment.deleteMany({ postId: req.body.id });
     console.log("DELTED COMMENTS:", commentDeleted);

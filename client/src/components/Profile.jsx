@@ -90,10 +90,10 @@ export default function Profile() {
       <Navbar />
       <div className="flex-1">
         <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
-          <div className="flex gap-5">
+          <div className="flex flex-col justify-center lg:justify-start lg:flex-row gap-5">
             <img src={auth.user?.picture} />
-            <div className="flex justify-between w-full">
-              <div className="flex flex-col justify-around">
+            <div className="flex flex-col lg:flex-row justify-between w-full">
+              <div className="flex flex-col items-center lg:items-start justify-around">
                 <div className="text-3xl flex items-center gap-3">
                   {auth.user?.name}{" "}
                   <div className="text-xs">
@@ -108,12 +108,12 @@ export default function Profile() {
                 </div>
                 <div className="text-xl text-slate-500">{auth.user?.email}</div>
               </div>
-              <div className="flex h-full items-center mr-20">
+              <div className="flex h-full items-center justify-center lg:justify-start lg:mr-20">
                 <div className="text-xl">Total Likes: {totalLikes}</div>
               </div>
             </div>
           </div>
-          <div className="mt-5">
+          <div className="mt-5 text-center lg:text-start">
             <div>
               <span className="font-semibold">Member since:</span> {formatDate}
             </div>
@@ -127,9 +127,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="mt-5">{auth.user?.bio}</div>
-          <div className="mt-5">
+          <div className="mt-5  text-center lg:text-start">
             <div>
-              <span className="font-semibold">Posts:</span>
+              <span className="font-semibold text-2xl">Posts:</span>
             </div>
           </div>
           <div className="mt-10">

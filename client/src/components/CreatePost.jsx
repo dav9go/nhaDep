@@ -153,16 +153,16 @@ export default function CreatePost() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen max-w-screen">
       <Navbar />
       <div className="flex-1">
         <section className="max-w-7xl mx-auto mt-10 flex gap-5">
-          <div className="w-1/2">
-            <div>
-              <h1 className="font-bold text-[32px]">
+          <div className="w-full lg:w-1/2">
+            <div className="px-5 lg:px-0">
+              <h1 className="font-bold text-[32px] text-center lg:text-start">
                 Upload ashtonishing designs
               </h1>
-              <p className="mt-2 text-[14px] max-w-[500px]">
+              <p className="mt-2 text-[14px] max-w-[500px] text-center lg:text-start">
                 Share your best designs with the community and earn reputation
                 through the process.
               </p>
@@ -301,7 +301,7 @@ export default function CreatePost() {
               </div>
             </form>
           </div>
-          <div className="flex w-1/2 h-full justify-center items-center">
+          <div className="hidden lg:flex w-1/2 h-full justify-center items-center">
             <img src={kitchenSKETCH}></img>
           </div>
         </section>

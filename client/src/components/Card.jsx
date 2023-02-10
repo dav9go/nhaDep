@@ -98,8 +98,18 @@ export default function Card({
         console.log("id of the POST", _id);
         deletePostObject.id = _id;
         deletePostObject.userId = auth.user._id;
+        const photoIdArray = photo.split("/");
+        console.log("PHOTOIDARRAY", photoIdArray);
+        const lastUrlPart = photoIdArray[photoIdArray.length - 1];
+        console.log("lastUrlPart", lastUrlPart);
+        const codeId = lastUrlPart.split(".");
+        console.log("codeId", codeId);
+        const codeNeeded = codeId[0];
+        console.log("codeNeeded", codeNeeded);
+        deletePostObject.photoId = codeNeeded;
         setDeletePostObject({ ...deletePostObject });
         console.log("delete post object", deletePostObject);
+
         const deletePost = await fetch(
           "https://nhadep.onrender.com/api/v1/post/delete",
           {
@@ -173,7 +183,7 @@ export default function Card({
             {description}
           </div>
         </div>
-        <div className="text-sm text-slate-700 mb-3 flex items-center gap-3 w-full">
+        <div className="text-xs lg:text-sm text-slate-700 mb-3 flex items-center gap-3 w-full">
           Tags:{" "}
           {tagsArray.map((tag) => {
             return (

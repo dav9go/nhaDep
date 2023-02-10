@@ -91,10 +91,12 @@ export default function PostCard({
   return (
     <div className="w-full">
       <img className="mx-auto" src={photo} />
-      <div className="flex justify-between items-baseline w-full">
-        <div className="flex gap-5 items-baseline mt-10">
-          <h1 className="text-3xl font-bold">{title}</h1>
-          <div className="text-xl font-medium text-slate-700 flex items-center gap-3">
+      <div className="flex flex-col lg:flex-row justify-between items-baseline w-full p-5 lg:p-0">
+        <div className="flex flex-col lg:flex-row gap-5 items-baseline mt-10">
+          <h1 className="text-3xl font-bold text-center lg:text-start">
+            {title}
+          </h1>
+          <div className="text-xl font-medium text-slate-700 flex justify-center lg:justify-start items-center gap-3 w-full lg:w-auto">
             {user}
             <div className="text-xs">
               {userId.isDesigner ? (
@@ -108,7 +110,7 @@ export default function PostCard({
           </div>
         </div>
 
-        <div className="flex gap-5 items-baseline">
+        <div className="flex justify-center lg:justify-start gap-5 items-baseline w-full lg:w-auto">
           <div className="text-md font-semibold text-slate-500">
             {formatDate}
           </div>
@@ -143,7 +145,7 @@ export default function PostCard({
         </div>
       </div>
 
-      <div className="mt-10">
+      <div className="lg:mt-10 px-5 lg:p-0">
         <div className="text-sm text-slate-700 mb-3 flex items-center gap-3 w-full">
           Tags:{" "}
           {tagsArray.map((tag) => {
@@ -159,7 +161,9 @@ export default function PostCard({
         </div>
       </div>
 
-      <div className="mt-10">{description}</div>
+      <div className="mt-5 lg:mt-10 px-5 lg:px-0 text-justify">
+        {description}
+      </div>
 
       <div className="mt-10">
         {/** Change currentuserId */}

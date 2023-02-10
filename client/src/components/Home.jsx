@@ -117,13 +117,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen max-w-screen">
       <Navbar />
       <div className="flex-1">
-        <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
+        <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5 px-5 lg:px-0 ">
           <div>
-            <h1 className="font-bold text-4xl">The Community Showcase</h1>
-            <p className="font-montserrat mt-2 text-md max-w-7xl">
+            <h1 className="font-bold text-4xl text-center lg:text-start ">
+              The Community Showcase
+            </h1>
+            <p className="font-montserrat mt-2 text-md max-w-7xl text-justify lg:text-start">
               Discover the latest interior design trends and transform your home
               into a beautiful oasis with the help of our online interior house
               design platform. Browse thousands of inspiring home decor ideas,
@@ -142,7 +144,7 @@ export default function Home() {
             Top 5 posts of the last 30 days
           </h2>
         </div>
-        <section className="w-full flex h-[430px] mt-10">
+        <section className=" flex w-full h-[430px] mt-10">
           <img
             className="w-[0px] grow object-cover opacity-80 duration-500 ease-in hover:w-[300px] hover:opacity-100 hover:contrast-125 hover:cursor-pointer"
             src={topFiveLikedPostsLastMonth[3]?.photo}
@@ -165,7 +167,7 @@ export default function Home() {
           />
         </section>
         <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5">
-          <div>
+          <div className="px-5 lg:px-0">
             <FormField
               labelName="Search posts"
               type="text"

@@ -16,7 +16,7 @@ export default function FormField({
         <div className="flex items-center gap-3">
           <label
             htmlFor={title}
-            className="block text-sm font-medium text-gray-900"
+            className="block text-sm font-medium text-gray-900 text-center ml-5 lg:ml-0"
           >
             {labelName}
           </label>
