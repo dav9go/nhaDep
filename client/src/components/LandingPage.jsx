@@ -56,7 +56,7 @@ function LandingPage() {
     <div className="bg-japanese-houseSM sm:bg-japanese-houseMD lg:bg-japanese-house  bg-fixed bg-clip-border bg-origin-border bg-cover bg-top bg-no-repeat h-screen w-screen">
       <Navbar />
       <div className="flex flex-row w-full">
-        <div className="flex flex-col text-left mt-10 ml-20 w-[40vw]">
+        <div className="flex flex-col text-left mt-10 ml-20 lg:w-[40vw]">
           <h3 className="text-5xl md:text-7xl font-bold text-white mt-3">
             Yumm
           </h3>
@@ -82,7 +82,7 @@ function LandingPage() {
             </div>
           )}
         </div>
-        <div className="w-[60vw]"></div>
+        <div className="lg:w-[60vw]"></div>
       </div>
     </div>
   );
