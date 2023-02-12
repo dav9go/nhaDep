@@ -19,7 +19,9 @@ cloudinary.config({
 router.route("/deleteCloudinary").put(async (req, res) => {
   try {
     const imgId = req.body.photoId;
-    await cloudinary.uploader.destroy(imgId);
+    await cloudinary.uploader.destroy(imgId, (err, res) => {
+      console.log("CLOUDINARY DELETE IMG", err, res);
+    });
     res.status(201).json({ success: true });
   } catch {
     res

@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "japanese-house": "url('/LANDAGEHOUSE2.jpg')",
+        "japanese-houseSM": "url('/landPageSM.png')",
+        "japanese-houseMD": "url('/landPageMD.png')",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

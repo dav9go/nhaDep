@@ -53,19 +53,16 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="bg-japanese-house bg-fixed bg-clip-border bg-origin-border bg-cover bg-top bg-no-repeat h-screen w-screen">
+    <div className="bg-japanese-houseSM sm:bg-japanese-houseMD lg:bg-japanese-house  bg-fixed bg-clip-border bg-origin-border bg-cover bg-top bg-no-repeat h-screen w-screen">
       <Navbar />
       <div className="flex flex-row w-full">
         <div className="flex flex-col text-left mt-10 ml-20 w-[40vw]">
-          <h3 className="text-6xl font-bold text-white mt-3">Yumm</h3>
-          <h3 className="text-6xl font-bold text-amber-900 mt-2">
+          <h3 className="text-5xl md:text-7xl font-bold text-white mt-3">
+            Yumm
+          </h3>
+          <h3 className="text-3xl md:text-6xl font-bold text-amber-900 mt-2">
             Designs to <br></br>Die for.
           </h3>
-          <p className="mt-5 font-montserrat">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel optio
-            mollitia repellendus eligendi. Vel optio mollitia repellendus
-            eligendi.
-          </p>
 
           {auth.user ? (
             <div className="flex flex-row gap-3 text-lg">
@@ -74,7 +71,7 @@ function LandingPage() {
               <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
             </div>
           ) : (
-            <div className="flex flex-row items-center gap-3 mt-7">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mt-10 lg:mt-14">
               <div className="" id="signInDiv"></div>
               <p className="" id="signInOr">
                 or
