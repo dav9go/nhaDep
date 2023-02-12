@@ -90,8 +90,10 @@ export default function CreatePost() {
             )
             .then(async (response) => {
               console.log("form before setForm", form);
-              console.log(response.data.secure_url);
-              console.log(response.data);
+              console.log("RESPONSE", response);
+              console.log("RESPONSE.DATA", response.data);
+              console.log("RESPONSE.DATA.SECUREURL", response.data.secure_url);
+
               console.log("form before url await response data", form);
               const url = response.data.secure_url;
               form.photo = url;

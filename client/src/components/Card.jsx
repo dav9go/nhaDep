@@ -120,9 +120,16 @@ export default function Card({
             body: JSON.stringify(deletePostObject),
           }
         );
-
-        console.log("DATA TO UPDATE DELETE", data);
-        console.log("DATA TO UPDATE DELETE _id", _id);
+        const deleteCloudinary = await fetch(
+          "https://nhadep.onrender.com/api/v1/post/deleteCloudinary",
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(deletePostObject),
+          }
+        );
         const updatedPosts = data.filter((post) => post._id !== _id);
         if (location.pathname === "/home") {
           setAllPosts(updatedPosts);

@@ -15,6 +15,19 @@ cloudinary.config({
   cloud_name: process.env.CLOUDINARY_API_SECRET,
 });
 
+//DELETE CLOUDINARY
+router.route("/deleteCloudinary").put(async (req, res) => {
+  try {
+    const imgId = req.body.photoId;
+    await cloudinary.uploader.destroy(imgId);
+    res.status(201).json({ success: true });
+  } catch {
+    res
+      .status(501)
+      .json({ success: false, message: "Delete cloudinary img error" });
+  }
+});
+
 // GET ONE POST
 
 router.route("/post/:postId").get(async (req, res) => {
@@ -167,11 +180,6 @@ router.route("/unlike").put((req, res) => {
 router.route("/delete").put(async (req, res) => {
   console.log("DELETE POST req.body", req.body);
   try {
-    /** DELETE IMAGE ON CLOUDINARY **/
-    const deletePhoto = await cloudinary.uploader
-      .destroy(req.body.photoId)
-      .then((res) => console.log(res));
-
     /** DELETE ALL THE COMMENTS OF THE POST **/
     const commentDeleted = await Comment.deleteMany({ postId: req.body.id });
     console.log("DELTED COMMENTS:", commentDeleted);
