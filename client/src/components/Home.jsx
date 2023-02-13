@@ -4,11 +4,6 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 import FormField from "./FormField";
 import Footer from "./Footer";
-import prueba1 from "../assets/prueba1.jpg";
-import prueba2 from "../assets/prueba2.jpg";
-import prueba3 from "../assets/prueba3.jpg";
-import prueba4 from "../assets/prueba4.jpg";
-import prueba5 from "../assets/prueba5.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -25,7 +20,6 @@ export default function Home() {
   const [searchTimeout, setSearchTimeout] = useState(null);
 
   const RenderCards = ({ data, title }) => {
-    console.log(data);
     if (data?.length > 0)
       return data.map((post) => (
         <Card

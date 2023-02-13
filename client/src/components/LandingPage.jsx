@@ -38,7 +38,7 @@ function LandingPage() {
 
   useEffect(() => {
     /** Global Google **/
-    google.accounts.id.initialize({
+    window.google.accounts.id.initialize({
       client_id:
         "984856038861-je945u8bmej6d99601n4rs2v5v7isetl.apps.googleusercontent.com",
       callback: handleCallbackResponse,
