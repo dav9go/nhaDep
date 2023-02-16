@@ -3,8 +3,8 @@ import { useAuth } from "./auth";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Loader from "./Loader";
 import Card from "./Card";
+import LoaderNoImg from "./LoaderNoImg";
 
 export default function Profile() {
   const auth = useAuth();
@@ -135,7 +135,7 @@ export default function Profile() {
           <div className="mt-10">
             {loading ? (
               <div className="flex justify-center items-center">
-                <Loader />
+                <LoaderNoImg />
               </div>
             ) : (
               <>

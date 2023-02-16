@@ -194,12 +194,12 @@ export default function Card({
           Tags:{" "}
           {tagsArray.map((tag) => {
             return (
-              <button
+              <div
                 key={tag}
-                className="bg-gray-200 hover:bg-gray-400 cursor-pointer px-2 rounded-lg line-clamp-1"
+                className="bg-gray-200 px-2 rounded-lg line-clamp-1"
               >
                 {tag}
-              </button>
+              </div>
             );
           })}
         </div>

@@ -5,8 +5,12 @@ import { useState, useEffect } from "react";
 import FormField from "./FormField";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import { useAuth } from "./auth";
+import LoaderNoImg from "./LoaderNoImg";
 
 export default function Home() {
+  const auth = useAuth();
+
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState([]);
 
@@ -115,7 +119,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen max-w-screen">
       <Navbar />
       <div className="flex-1">
-        {allPosts && (
+        {allPosts.length > 1 && topFiveLikedPostsLastMonth.length > 1 ? (
           <>
             <section className="max-w-7xl mx-auto mt-10 flex flex-col gap-5 px-5 lg:px-0 ">
               <div>
@@ -323,6 +327,8 @@ export default function Home() {
               </div>
             </section>
           </>
+        ) : (
+          <LoaderNoImg />
         )}
       </div>
       <Footer />

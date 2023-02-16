@@ -7,6 +7,7 @@ import RequiredAuth from "./components/RequiredAuth";
 import CreatePost from "./components/CreatePost";
 import PostPage from "./components/PostPage";
 import Contact from "./components/Contact";
+import LandingPageLogin from "./components/LandingPageLogin";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<LandingPageLogin />} />
             <Route path="/home" element={<Home />} />
             <Route path="/post/:postId" element={<PostPage />} />
             <Route path="/contact" element={<Contact />} />

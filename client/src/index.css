@@ -91,4 +91,156 @@
       -webkit-transform: rotate(-360deg);
     }
   }
+
+  /*width*/
+  .animatedballs7 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 13);
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs8 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 11);
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs9 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 9);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs10 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 12);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs11 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 10);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs12 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 8);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs13 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 7);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs14 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 6);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
+
+  .animatedballs15 {
+    animation: movementanimation 15s linear infinite;
+    animation-fill-mode: both;
+    animation-duration: calc(125s / 5);
+    animation-delay: 1s;
+  }
+
+  @keyframes movementanimation {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+
+    100% {
+      transform: translateY(-10vh) scale(1);
+    }
+  }
 }

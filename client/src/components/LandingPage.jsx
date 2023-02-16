@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Navbar from "./Navbar";
@@ -74,7 +74,7 @@ function LandingPage() {
               <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
             </div>
           ) : (
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mt-10 lg:mt-14">
+            <div className="flex flex-col justify-center items-center gap-3 mt-10 lg:mt-14">
               <div className="" id="signInDiv"></div>
               <p className="" id="signInOr">
                 or
