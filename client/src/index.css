@@ -243,4 +243,35 @@
       transform: translateY(-10vh) scale(1);
     }
   }
+
+  /*Hamburger*/
+  .button-one {
+    background: transparent;
+    border-radius: 1rem;
+  }
+
+  .button-one .line {
+    transition: y 225ms ease-in 225ms, rotate 225ms ease-in, opacity 0ms 225ms;
+    transform-origin: center;
+  }
+
+  .button-one[aria-expanded="true"] .line {
+    transition: y 225ms ease-in, rotate 225ms ease-in 225ms, opacity 0ms 225ms;
+  }
+
+  .button-one[aria-expanded="true"] :is(.line-top, .line-bottom) {
+    y: 45;
+  }
+
+  .button-one[aria-expanded="true"] .line-top {
+    rotate: 45deg;
+  }
+
+  .button-one[aria-expanded="true"] .line-bottom {
+    rotate: -45deg;
+  }
+
+  .button-one[aria-expanded="true"] .line-middle {
+    opacity: 0;
+  }
 }

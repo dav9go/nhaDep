@@ -1,6 +1,7 @@
 import logo from "../assets/HOUSINGLOGOcut.png";
 import { Link } from "react-router-dom";
 import { useAuth } from "./auth";
+import Hamburger from "./Hamburger";
 
 export default function Navbar() {
   const auth = useAuth();
@@ -12,6 +13,9 @@ export default function Navbar() {
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center justify-between sm:px-8 px-4 py-4">
+      <div className="lg:hidden w-full flex flex-row-reverse">
+        <Hamburger />
+      </div>
       <div className="flex flex-row items-center gap-3 p-3">
         <div className="flex flex-row items-center gap-3 p-3">
           <img src={logo} width={50} height={50}></img>
