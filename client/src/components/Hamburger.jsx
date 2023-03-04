@@ -5,8 +5,10 @@ import { useAuth } from "./auth";
 export default function Hamburger() {
   const [opened, setOpened] = useState(false);
 
+  //To redirect
   const location = useLocation();
 
+  //Authorization info
   const auth = useAuth();
 
   const userId = auth.user?._id;

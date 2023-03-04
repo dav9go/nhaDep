@@ -22,7 +22,7 @@ export default function Card({
   /** String to array of tags and split to show only the first 5 to improve UI **/
   const tagsArray = tags.split(", ").slice(0, 5);
 
-  /** Format creation date of the post **/
+  /** Format the date of the post **/
   const options = {
     year: "numeric",
     month: "long",
